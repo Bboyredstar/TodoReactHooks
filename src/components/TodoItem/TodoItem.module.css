@@ -1,0 +1,38 @@
+
+.todoListItemLabel{
+    padding: 0;
+    flex-basis: 60%;
+
+}
+.todoListItem{
+    display: flex;
+    padding:.2em;
+    font-size: 1.25em;
+    justify-content: space-between;
+}
+
+.todoListItem button {
+    width: 2em;
+    margin: .2em;
+}
+  
+.itemName {
+  flex-basis: 80%;
+  cursor: pointer;
+  user-select: none;
+  color:var(--gray-dark);
+  text-transform: capitalize;
+  max-height: 2rem;
+  letter-spacing: .05rem;
+  font-weight: 400;
+}
+  
+.done{
+  text-decoration: line-through;
+}
+
+.important{
+  color:var(--blue);
+  font-weight: 600;
+  text-decoration-color:var(--gray-dark);
+}

@@ -1,0 +1,11 @@
+.search-panel{
+  width: 100%;
+  display:flex;
+  flex-wrap: nowrap;
+}
+
+.search-input{
+  max-height: 3em;
+  flex-basis:80%;
+}
+

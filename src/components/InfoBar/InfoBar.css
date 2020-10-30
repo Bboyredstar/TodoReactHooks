@@ -1,0 +1,5 @@
+.info-bar{
+  display: flex;
+  flex-basis: 40%;
+  justify-content: flex-end;
+}

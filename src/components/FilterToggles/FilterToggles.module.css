@@ -1,0 +1,5 @@
+.filterToggles{
+  display: flex;
+  flex-basis: 20%;
+  padding-left: 1em;
+}

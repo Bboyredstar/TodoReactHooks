@@ -1,0 +1,17 @@
+.addPanel {
+  position:absolute;
+  width: 100%;
+  bottom:2%;
+  left:0;
+  display:flex;
+  flex-wrap: nowrap;
+  padding: 2em 0;
+  justify-content: space-between;
+}
+
+.addInput{
+  flex-basis: 80%;
+}
+.addButton{
+  flex-basis:20%;
+}
