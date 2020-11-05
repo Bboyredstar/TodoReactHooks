@@ -9,20 +9,23 @@
     padding:.2em;
     font-size: 1.25em;
     justify-content: space-between;
+    align-items: center;
 }
 
 .todoListItem button {
     width: 2em;
+    height: 2em;
     margin: .2em;
 }
   
 .itemName {
+  display:flex;
+  word-break: break-word;
   flex-basis: 80%;
   cursor: pointer;
   user-select: none;
   color:var(--gray-dark);
   text-transform: capitalize;
-  max-height: 2rem;
   letter-spacing: .05rem;
   font-weight: 400;
 }

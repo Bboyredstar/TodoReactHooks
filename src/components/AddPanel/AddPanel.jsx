@@ -1,34 +1,31 @@
-import React, { useState } from 'react';
-import styles from './AddPanel.module.css';
-import cn from 'classnames';
+import React, { useContext, useRef } from 'react'
+import styles from './AddPanel.module.css'
+import cn from 'classnames'
+import { ItemContext } from '../../context/ItemContext'
 
-const AddPanel = ( {onAdded} ) => {
-  const [inputValue,setValue] = useState('');
-
-  
-  const inputHandler = (e) => {
-    const input = e.target;
-    let value = input.value.toLowerCase();
-    setValue(value);
+const AddPanel = () => {
+  const { dispatch } = useContext(ItemContext)
+  const inputEl = useRef(null)
+  const onSubmit = e => {
+    e.preventDefault()
+    let inputValue = inputEl.current.value
+    if (!!inputValue && inputValue.trim() !== '') {
+      dispatch({ type: 'ADD_ITEM', payload: inputValue })
+      inputEl.current.value = ''
+    }
   }
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-    onAdded(inputValue);
-    setValue('');
-  }
-    
-  
   return (
-    <form className={styles.addPanel}
-    onSubmit = { (e) => onSubmit(e) } >
-      <input type='text' 
+    <form className={styles.addPanel} onSubmit={onSubmit}>
+      <input
+        type='text'
         placeholder='Input todo item '
-        className={cn('form-control',styles.addInput)}
-        onChange = { e => inputHandler(e) }
-        value={inputValue}/>
+        className={cn('form-control', styles.addInput)}
+        ref={inputEl}
+      />
       <button className={cn('btn', 'btn-outline-secondary')}>Add item</button>
-    </form>)
+    </form>
+  )
 }
 
-export default AddPanel;
+export default AddPanel

@@ -1,24 +1,22 @@
-import React from 'react';
-import TodoItem from '../TodoItem';
-import './TodoList.css';
+import React, { useContext, useEffect, useState } from 'react'
+import TodoItem from '../TodoItem'
+import { ItemContext } from '../../context/ItemContext'
+import './TodoList.css'
 
-const TodoList = ( { items,onDeleted,
-                     onToggleImportant,
-                     onToggleDone
-                     } ) => {  
-    return(
-      <ul className='list-group todo-list'>
-          {items.map(({id,...otherItems},index) => 
-          <li className='list-group-item' key={id} >
-            <TodoItem 
-             { ...otherItems }
-             onDeleted = { () => onDeleted(id) }
-             onToggleImportant = { () => onToggleImportant(id)}
-             onToggleDone = { () => onToggleDone(id)}
-            />
-          </li>)
-          }
-      </ul>);
-  }
+const TodoList = () => {
+  const {
+    state: { todos, filter },
+  } = useContext(ItemContext)
 
-  export default TodoList;
+  return (
+    <ul className='list-group todo-list'>
+      {todos.map(({ id, ...otherItems }) => (
+        <li className='list-group-item' key={id}>
+          <TodoItem id={id} {...otherItems} />
+        </li>
+      ))}
+    </ul>
+  )
+}
+
+export default TodoList

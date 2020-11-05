@@ -1,2 +1,2 @@
-import AddPanel from './AddPanel';
-export default AddPanel;
+import AddPanel from './AddPanel'
+export default AddPanel

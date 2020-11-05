@@ -1,2 +1,2 @@
-import FilterToggles from './FilterToggles';
-export default FilterToggles;
+import FilterToggles from './FilterToggles'
+export default FilterToggles
